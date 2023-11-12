@@ -11,7 +11,12 @@
     if(is_numeric($_POST['Nb_adresse'])){
         echo"bonjour";
     }else{
-        echo"echouer";
+        echo"Nombre d'adresse incorrect , Veuillez retournez dans la page precedente ";
+        ?>
+        <br>
+        <br>
+        <a href="../index.php" >Precedent</a>
+        <?php
     }
     echo"<br><br>";
     //var_dump($_POST['Nb_adresse']);
