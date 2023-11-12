@@ -20,20 +20,28 @@
         <legend>
         <form  method="post" action="./confirmation.php">
 
-        <label for="street<?php $i ?>">Street<?php $i ?> : </label>
-        <input type="text" id="street<?php $i ?>" value="entrez votre adresse"><br>
+        <label for="street">Street<?php $i ?> : </label>
+        <input type="text" id="street" value="entrez votre adresse" name="street<?php $i ?>"><br>
 
-        <label for="street_nb<?php $i ?>">Street_number<?php $i ?> : </label>
-        <input type="text" id="street_nb<?php $i ?>" value="entrez votre numero de rue "><br>
+        <label for="street_nb">Street_number<?php $i ?> : </label>
+        <input type="text" id="street_nb" value="entrez votre numero de rue" name="street_nb<?php $i ?>"><br>
 
         <label for="type<?php $i ?>">Type<?php $i ?> : </label>
-        <input type="text" id="type<?php $i ?>" value="choisissez votre type"><br>
+        <select name="type<?php $i ?>" id="type<?php $i ?>">
+        <option>Facturation</option>
+        <option>Livraison</option>
+    </select><br>
 
         <label for="city<?php $i ?>">City<?php $i ?> : </label>
-        <input type="select" id="city<?php $i ?>" value="choisissez votre villez"><br>
+        <select name="city<?php $i ?>" id="city<?php $i ?>">
+        <option>Montreal</option>
+        <option>Toronto</option>
+        <option>Vancouver</option>
+        <option>Sherbrooke</option>
+    </select><br>
 
-        <label for="zipcode<?php $i ?>">Zipcode<?php $i ?> : </label>
-        <input type="text" id="zipcode<?php $i ?>" value="entrez votre zipcode"><br>
+        <label for="zipcode">Zipcode<?php $i ?> : </label>
+        <input type="text" id="zipcode" value="entrez votre zipcode" name="zipcode<?php $i ?>"><br>
         </legend>
         <?php
             
@@ -44,7 +52,8 @@
         <input type="submit" value="envoyer">
     </form>
     <?php
-    }//message d'erreur en cas d'echec de validtion et envoie vers la page Index
+    }
+    //message d'erreur en cas d'echec de validtion et envoie vers la page Index
     else{
         echo"Nombre d'adresse incorrect , Veuillez retournez dans la page precedente ";
         ?>

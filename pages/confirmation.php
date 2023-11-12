@@ -1,1 +1,11 @@
-<h1>Reussi  </h1>
+<?php
+session_start();
+$_SESSION=[
+    $_POST['street'],
+    $_POST['street_nb'],
+    $_POST['type'],
+    $_POST['city'],
+    $_POST['zipcode'],
+];
+var_dump($_SESSION);
+?>
