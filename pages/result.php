@@ -7,16 +7,18 @@
 </head>
 <body class="affichage2">
     <?php
-    //j'effectue ma premiere  validation qui verras si l'element envoyer et un entier
+    
+    //j'effectue ma premiere  validation qui verras si l'element envoyer est un entier
     
     if(is_numeric($_POST['Nb_adresse'])){
         $imax=intval($_POST['Nb_adresse']);
         for ($i=0; $i <$imax ; $i++) { 
-
+             /* creation des formulaires dans la boucle  */
         ?>
+       
         <h1>Formulaire de Renseignement</h1>
-
-        <form method="post" action="./confirmation.php">
+        <legend>
+        <form  method="post" action="./confirmation.php">
 
         <label for="street<?php $i ?>">Street<?php $i ?> : </label>
         <input type="text" id="street<?php $i ?>" value="entrez votre adresse"><br>
@@ -32,15 +34,18 @@
 
         <label for="zipcode<?php $i ?>">Zipcode<?php $i ?> : </label>
         <input type="text" id="zipcode<?php $i ?>" value="entrez votre zipcode"><br>
-        
+        </legend>
         <?php
             
         } 
         ?>
+        <br>
+        <br>
         <input type="submit" value="envoyer">
     </form>
     <?php
-    }else{
+    }//message d'erreur en cas d'echec de validtion et envoie vers la page Index
+    else{
         echo"Nombre d'adresse incorrect , Veuillez retournez dans la page precedente ";
         ?>
         <br>
@@ -48,9 +53,5 @@
         <a href="../index.php" >Precedent</a>
         <?php
     }
-    echo"<br><br>";
-    //var_dump($_POST['Nb_adresse']);
-    
-    
-    ?>
+      ?>
 </body>
