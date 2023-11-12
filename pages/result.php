@@ -8,8 +8,38 @@
 <body class="affichage2">
     <?php
     //j'effectue ma premiere  validation qui verras si l'element envoyer et un entier
+    
     if(is_numeric($_POST['Nb_adresse'])){
-        echo"bonjour";
+        $imax=intval($_POST['Nb_adresse']);
+        for ($i=0; $i <$imax ; $i++) { 
+
+        ?>
+        <h1>Formulaire de Renseignement</h1>
+
+        <form method="post" action="./confirmation.php">
+
+        <label for="street<?php $i ?>">Street<?php $i ?> : </label>
+        <input type="text" id="street<?php $i ?>" value="entrez votre adresse"><br>
+
+        <label for="street_nb<?php $i ?>">Street_number<?php $i ?> : </label>
+        <input type="text" id="street_nb<?php $i ?>" value="entrez votre numero de rue "><br>
+
+        <label for="type<?php $i ?>">Type<?php $i ?> : </label>
+        <input type="text" id="type<?php $i ?>" value="choisissez votre type"><br>
+
+        <label for="city<?php $i ?>">City<?php $i ?> : </label>
+        <input type="select" id="city<?php $i ?>" value="choisissez votre villez"><br>
+
+        <label for="zipcode<?php $i ?>">Zipcode<?php $i ?> : </label>
+        <input type="text" id="zipcode<?php $i ?>" value="entrez votre zipcode"><br>
+        
+        <?php
+            
+        } 
+        ?>
+        <input type="submit" value="envoyer">
+    </form>
+    <?php
     }else{
         echo"Nombre d'adresse incorrect , Veuillez retournez dans la page precedente ";
         ?>
