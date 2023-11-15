@@ -46,14 +46,14 @@ if ($conn) {
         <label for="street_nb">Street_number<?php $i ?> : </label>
         <input type="text" id="street_nb"  name="street_nb<?php echo$i ?>"><br>
 
-        <label for="type<?php $i ?>">Type<?php echo$i ?> : </label>
-        <select name="type<?php $i ?>" id="type<?php echo$i ?>">
+        <label for="type<?php echo$i ?>">Type<?php echo$i ?> : </label>
+        <select name="type<?php echo$i ?>" id="type<?php echo$i ?>">
         <option>Facturation</option>
         <option>Livraison</option>
     </select><br>
 
-        <label for="city<?php $i ?>">City<?php echo$i ?> : </label>
-        <select name="city<?php $i ?>" id="city<?php echo$i ?>">
+        <label for="city<?php echo$i ?>">City<?php echo$i ?> : </label>
+        <select name="city<?php echo$i ?>" id="city<?php echo$i ?>">
         <option>Montreal</option>
         <option>Toronto</option>
         <option>Vancouver</option>
