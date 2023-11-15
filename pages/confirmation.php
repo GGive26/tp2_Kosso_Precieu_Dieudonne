@@ -1,11 +1,3 @@
 <?php
-session_start();
-$_SESSION=[
-    $_POST['street'],
-    $_POST['street_nb'],
-    $_POST['type'],
-    $_POST['city'],
-    $_POST['zipcode'],
-];
-var_dump($_SESSION);
+var_dump($_POST);
 ?>

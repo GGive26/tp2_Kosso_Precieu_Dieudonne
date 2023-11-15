@@ -6,12 +6,12 @@ $db = "ecom1_tp2";
 
 $conn = mysqli_connect($server, $userName, $pwd, $db);
 if ($conn) {
-    echo "Connected to the $db database successfully";
+    //echo "Connected to the $db database successfully";
     global $conn;
     session_start();
     $_SESSION['connexion']= $conn;
 } else {
-    echo "Error : Not connected to the $db database";
+    //echo "Error : Not connected to the $db database";
 } 
 ?>
 
@@ -66,13 +66,10 @@ if ($conn) {
         
         <?php
             
-        } 
-        ?>
-        <br>
+        } ?> <br>
         <br>
         <input type="submit" value="envoyer">
-    </form>
-    <?php
+    </form> <?php
     }
     //message d'erreur en cas d'echec de validtion et envoie vers la page Index
     else{
@@ -83,5 +80,5 @@ if ($conn) {
         <a href="../index.php" >Precedent</a>
         <?php
     }
-      ?>
+    ?>
 </body>
