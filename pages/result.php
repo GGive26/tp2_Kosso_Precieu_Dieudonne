@@ -3,46 +3,50 @@
     <link rel="stylesheet" href="../style/monstyle.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resultat</title>
 </head>
 <body class="affichage2">
+<h1>Formulaire de Renseignement</h1>
     <?php
     
     //j'effectue ma premiere  validation qui verras si l'element envoyer est un entier
     
+    
     if(is_numeric($_POST['Nb_adresse'])){
         $imax=intval($_POST['Nb_adresse']);
-        for ($i=0; $i <$imax ; $i++) { 
+        for ($i=1; $i <=$imax ; $i++) { 
              /* creation des formulaires dans la boucle  */
         ?>
        
-        <h1>Formulaire de Renseignement</h1>
-        <legend>
+        
+        <fieldset>
+        <legend>Adresse  <?php echo$i ?></legend>
         <form  method="post" action="./confirmation.php">
 
-        <label for="street">Street<?php $i ?> : </label>
-        <input type="text" id="street" value="entrez votre adresse" name="street<?php $i ?>"><br>
+        <label for="street">Street<?php echo$i ?> : </label>
+        <input type="text" id="street"  name="street<?php echo$i ?>"><br>
 
         <label for="street_nb">Street_number<?php $i ?> : </label>
-        <input type="text" id="street_nb" value="entrez votre numero de rue" name="street_nb<?php $i ?>"><br>
+        <input type="text" id="street_nb"  name="street_nb<?php echo$i ?>"><br>
 
-        <label for="type<?php $i ?>">Type<?php $i ?> : </label>
-        <select name="type<?php $i ?>" id="type<?php $i ?>">
+        <label for="type<?php $i ?>">Type<?php echo$i ?> : </label>
+        <select name="type<?php $i ?>" id="type<?php echo$i ?>">
         <option>Facturation</option>
         <option>Livraison</option>
     </select><br>
 
-        <label for="city<?php $i ?>">City<?php $i ?> : </label>
-        <select name="city<?php $i ?>" id="city<?php $i ?>">
+        <label for="city<?php $i ?>">City<?php echo$i ?> : </label>
+        <select name="city<?php $i ?>" id="city<?php echo$i ?>">
         <option>Montreal</option>
         <option>Toronto</option>
         <option>Vancouver</option>
         <option>Sherbrooke</option>
     </select><br>
 
-        <label for="zipcode">Zipcode<?php $i ?> : </label>
-        <input type="text" id="zipcode" value="entrez votre zipcode" name="zipcode<?php $i ?>"><br>
-        </legend>
+        <label for="zipcode">Zipcode<?php echo$i ?> : </label>
+        <input type="text" id="zipcode"  name="zipcode<?php echo$i ?>"><br>
+        </fieldset>
+        
         <?php
             
         } 
