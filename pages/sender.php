@@ -1,15 +1,11 @@
-<?php
-require_once('../functions/function.php');
-require_once('./confirmation.php');
-session_start();
-if(isset($_SESSION['imax'])){
-    $imax=intval($_SESSION['imax']);
-    echo$imax;
-};
-
-for ($i=1; $i <$imax ; $i++) { 
-    createAdrress($data[$i]);
-};
-
-
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sender</title>
+</head>
+<body>
+        <h1>Success</h1>
+</body>
+</html>

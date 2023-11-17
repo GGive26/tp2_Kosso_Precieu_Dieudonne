@@ -19,12 +19,12 @@ function createAdrress(array $data)
 {
     global $conn;
 
-    $query = "INSERT INTO user VALUES (NULL, ?, ?, ?,?,?)";
+    $query = "INSERT INTO address VALUES (NULL,?, ?, ?, ?,?,?)";
     if ($stmt = mysqli_prepare($conn, $query)) {
          
         mysqli_stmt_bind_param(
             $stmt,
-            "issss",
+            "iissss",
             $data['street'],
             $data['street_nb'],
             $data['type'],
@@ -33,6 +33,18 @@ function createAdrress(array $data)
         );
         $result = mysqli_stmt_execute($stmt);
     }
+}
+function deleteAllAdress()
+{
+    global $conn;
+    $result = mysqli_query($conn, "DELETE * FROM address");
+
+    $data = [];
+    $i = 0;
+    while ($rangeeData = mysqli_fetch_assoc($result)) {
+        $data[$i] = $rangeeData;
+        $i++;
+    };
 }
 
 ?>

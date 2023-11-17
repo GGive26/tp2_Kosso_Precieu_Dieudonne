@@ -7,9 +7,9 @@
 <body class="affichage2">
 <h1>Formulaire de Renseignement</h1>
     <?php
+    //stockage de la variable $imax dans $_session
     session_start();
    $imax=intval($_POST['Nb_adresse']);
-   var_dump($imax);
    $_SESSION['imax']=$imax;
     //j'effectue ma premiere  validation qui verras si l'element envoyer est un entier
     
