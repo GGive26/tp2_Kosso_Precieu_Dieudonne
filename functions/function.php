@@ -12,19 +12,22 @@ if ($conn) {
     $_SESSION['connexion']= $conn;
 } else {
     echo "Error : Not connected to the $db database";
-} 
+}
+if(isset($_SESSION['imax'])){
+    $imax=intval($_SESSION['imax']);
+};
 
 
 function createAdrress(array $data)
 {
     global $conn;
 
-    $query = "INSERT INTO address VALUES (NULL,?, ?, ?, ?,?,?)";
+    $query = "INSERT INTO address VALUES (NULL, ?, ?, ?,?,?)";
     if ($stmt = mysqli_prepare($conn, $query)) {
          
         mysqli_stmt_bind_param(
             $stmt,
-            "iissss",
+            "sisss",
             $data['street'],
             $data['street_nb'],
             $data['type'],
@@ -34,17 +37,19 @@ function createAdrress(array $data)
         $result = mysqli_stmt_execute($stmt);
     }
 }
-function deleteAllAdress()
+function deleteAllAddress(int $imax)
 {
     global $conn;
-    $result = mysqli_query($conn, "DELETE * FROM address");
+    $i=1;
+    while($i<=$imax){
+    $query = "DELETE FROM address
+                WHERE address.id =$i;";
+        $stmt = mysqli_prepare($conn, $query);
 
-    $data = [];
-    $i = 0;
-    while ($rangeeData = mysqli_fetch_assoc($result)) {
-        $data[$i] = $rangeeData;
+        $result = mysqli_stmt_execute($stmt);
         $i++;
-    };
+    }
 }
+
 
 ?>
