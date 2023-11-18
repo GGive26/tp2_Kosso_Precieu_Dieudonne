@@ -22,7 +22,7 @@ function streetIsValid(string $street): array
         ];
     } elseif (strlen($street) > 25) {
         echo '<br><br> Dans mon if strlen >20';
-        echo strlen($street);  
+        echo strlen($street);
         $result = [
             'isValid' => false,
             'msg' => 'Le nom utilisé est trop long'
@@ -32,7 +32,7 @@ function streetIsValid(string $street): array
 
         echo '<br><br>';
         var_dump($userInDB);
- 
+
         $result = [
             'isValid' => false,
             'msg' => 'Le nom est déjà utilisé'
@@ -46,19 +46,18 @@ function streetNbIsValid(int $streetNb): array
 {
 
     $isValid = true;
-    if($streetNb<1){
-    return [
-        'isValid' => false,
-        'msg' => 'le numero de rue est trop court'
-    ];}
-    elseif($streetNb>5000){
-        $isValid = true;
+    if ($streetNb < 1) {
+        return [
+            'isValid' => false,
+            'msg' => 'le numero de rue est trop court'
+        ];
+    } elseif ($streetNb > 5000) {
+        $isValid = false;
         return [
             'isValid' => $isValid,
             'msg' => 'votre numero de rue de rue est superieur a ceux indiquer'
         ];
-    }
-    else{
+    } else {
         $isValid = true;
         return [
             'isValid' => $isValid,
@@ -69,11 +68,18 @@ function streetNbIsValid(int $streetNb): array
 
 function zipcodeIsValid(string $zipcode): array
 {
-    
-    $isValid = true;
-    return [
-        'isValid' => $isValid,
-        'msg' => ''
 
-    ];
+    $isValid = true;
+    if ($zipcode < 6 || $zipcode > 6) {
+        return [
+            'isValid' => false,
+            'msg' => 'zipcode incorrect'
+        ];
+    } else {
+        $isValid = true;
+        return [
+            'isValid' => $isValid,
+            'msg' => ''
+        ];
+    }
 }
