@@ -26,19 +26,34 @@ $infos = $_POST;
 //affichage du formulaire dans lequelle serons nos informations de $infos
 
 echo "<form method='post' action='./sender.php' width='200px' height='200px' >";
-if (count($infos) > 0) {
+$validation=true;
+if ($validation==false) {
+
+    for ($i=1; $i <$imax ; $i++) { 
+        
+        if(isset($infos['street'])){
+            $streetNbisValid = streetNbIsValid($infos['street']);
+            var_dump($streetisValid);
+            $validation=false;
+        }
+        if(isset($infos['street_'])){
+            $streetNbisValid = streetNbIsValid($infos['street_nb']);
+            var_dump($streetisValid);
+            $validation=false;
+        }
+        if(isset($infos['street'])){
+            $streetNbisValid = streetNbIsValid($infos['zipcode']);
+            var_dump($streetisValid);
+            $validation=false;
+        }
+        echo"<button><a href='../index.php'>annuler</a></button>";
+
+    }
+}else{
     foreach ($infos as $key => $value) {
         echo "<input type='text' id='$key' value='$value' readonly /><br><br>";
         if (isset($_POST['street']) || isset($_POST['street_nb']) || isset($_POST['zipcode'])) {
 
-            //execution des validations 
-
-            $streetisValid = streetIsValid($infos['street']);
-            $streetNbisValid = streetNbIsValid($infos['street']);
-            $zipcodeisValid = zipcodeIsValid($infos['street']);
-            var_dump($zipcodeisValid);
-            var_dump($streetisValid);
-            var_dump($streetNbisValid);
         }
     }
 }
