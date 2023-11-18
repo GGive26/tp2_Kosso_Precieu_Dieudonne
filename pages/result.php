@@ -1,11 +1,11 @@
 <head>
-    <link rel="stylesheet" href="../style/monstyle.css">
+    <link rel="stylesheet" href="../style/style2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultat</title>
 </head>
 
-<body class="affichage2">
+<body class="result">
     <h1>Formulaire de Renseignement</h1>
     <?php
     require('../functions/validation.php');

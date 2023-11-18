@@ -7,6 +7,8 @@
     <title>confirmation</title>
 </head>
 <body class="confirmation">
+    <h1>PAGE DE CONFIRMATION</h1><br><br>
+    <h3>Si les informations sont exactes il vous suffit de confirmer au cas contraire annuler</h3>
 <?php
 //appel de la page function pour pouvoir l'utuliser
 require_once('../functions/function.php');
@@ -60,7 +62,7 @@ if (isset($_POST) || $streetisValid = true || $streetNbisValid = true || $zipcod
 
 $_SESSION['data'] = $globaldata;
 ?>
-<input type="submit" value="confirmer">
+<input type="submit" value="confirmer"><br>
 <button><a href="../index.php">annuler</a></button>
 <?php
 echo "</form>";
