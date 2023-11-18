@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../style/style2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirmation</title>
+</head>
+<body class="confirmation">
 <?php
 //appel de la page function pour pouvoir l'utuliser
 require_once('../functions/function.php');
@@ -14,10 +23,10 @@ $infos = $_POST;
 
 //affichage du formulaire dans lequelle serons nos informations de $infos
 
-echo "<form method='post' action='./sender.php' >";
+echo "<form method='post' action='./sender.php' width='200px' height='200px' >";
 if (count($infos) > 0) {
     foreach ($infos as $key => $value) {
-        echo "<input type='text' id='$key' value='$value' readonly /><br>";
+        echo "<input type='text' id='$key' value='$value' readonly /><br><br>";
         if (isset($_POST['street']) || isset($_POST['street_nb']) || isset($_POST['zipcode'])) {
 
             //execution des validations 
@@ -50,13 +59,12 @@ if (isset($_POST) || $streetisValid = true || $streetNbisValid = true || $zipcod
 //insertion de globaldata dans session afin de pouvoir l'utuliser ou l'on souhaite
 
 $_SESSION['data'] = $globaldata;
-var_dump($globaldata);
 ?>
 <input type="submit" value="confirmer">
+<button><a href="../index.php">annuler</a></button>
 <?php
 echo "</form>";
 ?>
-<button><a href="../index.php">annuler</a></button>
 </body>
-
 </html>
+

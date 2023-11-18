@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../style/monstyle.css">
+    <link rel="stylesheet" href="../style/style2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>confirmation</title>
 </head>
-<body class="affichage3">
+<body>
+<div class="sender">
 <?php 
 $server = 'localhost';
 $userName = "root";
@@ -62,4 +63,7 @@ function deleteAllAddress(int $imax)
 
 
 ?>
+</div>
+</body>
+</html>
 

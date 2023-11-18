@@ -1,0 +1,10 @@
+.confirmation{
+    margin-top: 150px;
+    margin-left: 200px;
+    background-image: url("../images/result.jfif");
+}
+.sender{
+    text-align: center;
+    background-image:url("../images/merci.jpg");
+    margin: auto;
+}
