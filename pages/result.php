@@ -11,15 +11,17 @@
     session_start();
    $imax=intval($_POST['Nb_adresse']);
    $_SESSION['imax']=$imax;
-    //j'effectue ma premiere  validation qui verras si l'element envoyer est un entier
     
+   //j'effectue ma premiere  validation qui verras si l'element envoyer est un entier
+    $globalimax['imax']=$imax;
+    global $globalimax;
     
     if(is_numeric($_POST['Nb_adresse'])){
         $imax=intval($_POST['Nb_adresse']);
         for ($i=1; $i <=$imax ; $i++) { 
              /* creation des formulaires dans la boucle  */
         ?>
-       
+      
         
         <fieldset>
         <legend>Adresse  <?php echo$i ?></legend>

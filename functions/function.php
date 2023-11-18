@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../style/monstyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirmation</title>
+</head>
+<body class="affichage3">
 <?php 
 $server = 'localhost';
 $userName = "root";
@@ -6,7 +15,7 @@ $db = "ecom1_tp2";
 
 $conn = mysqli_connect($server, $userName, $pwd, $db);
 if ($conn) {
-    echo "Connected to the $db database successfully";
+    //echo "Connected to the $db database successfully";
     global $conn;
     session_start();
     $_SESSION['connexion']= $conn;
@@ -53,3 +62,4 @@ function deleteAllAddress(int $imax)
 
 
 ?>
+

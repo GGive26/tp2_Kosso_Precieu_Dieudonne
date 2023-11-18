@@ -1,6 +1,6 @@
 <?php
 
-function usernameIsValid(string $username): array
+function streetIsValid(string $street): array
 {
     $result = [
         'isValid' => true,
@@ -8,21 +8,21 @@ function usernameIsValid(string $username): array
 
     ];
 
-    $userInDB = getUserByName($username);
+    $userInDB = getUserByName($street);
 
     var_dump($userInDB);
 
     echo '<br><br>';
-    echo strlen($username);
-    if (strlen($username) < 2) {
+    echo strlen($street);
+    if (strlen($street) < 5) {
         $result = [
             'isValid' => false,
             'msg' => 'Le nom utilisé est trop court'
 
         ];
-    } elseif (strlen($username) > 20) {
+    } elseif (strlen($street) > 25) {
         echo '<br><br> Dans mon if strlen >20';
-        echo strlen($username);  
+        echo strlen($street);  
         $result = [
             'isValid' => false,
             'msg' => 'Le nom utilisé est trop long'
@@ -32,12 +32,7 @@ function usernameIsValid(string $username): array
 
         echo '<br><br>';
         var_dump($userInDB);
-        //Doit être différent d'un user name déjà dans la DB
-
-        /* 
-        1) get user by username
-        2) if exist : error
-        */
+ 
         $result = [
             'isValid' => false,
             'msg' => 'Le nom est déjà utilisé'
@@ -47,20 +42,34 @@ function usernameIsValid(string $username): array
     return $result;
 }
 
-function emailIsValid(string $email): array
+function streetNbIsValid(int $streetNb): array
 {
-    # code...
-    $isValid = true;
-    return [
-        'isValid' => $isValid,
-        'msg' => ''
 
-    ];
+    $isValid = true;
+    if($streetNb<1){
+    return [
+        'isValid' => false,
+        'msg' => 'le numero de rue est trop court'
+    ];}
+    elseif($streetNb>5000){
+        $isValid = true;
+        return [
+            'isValid' => $isValid,
+            'msg' => 'votre numero de rue de rue est superieur a ceux indiquer'
+        ];
+    }
+    else{
+        $isValid = true;
+        return [
+            'isValid' => $isValid,
+            'msg' => ''
+        ];
+    }
 }
 
-function pwdIsValid(string $pwd): array
+function zipcodeIsValid(string $zipcode): array
 {
-    # code...
+    
     $isValid = true;
     return [
         'isValid' => $isValid,
