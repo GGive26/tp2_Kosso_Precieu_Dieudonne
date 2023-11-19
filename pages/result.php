@@ -33,7 +33,7 @@
                     <input type="text" id="street" name="street<?php echo $i ?>"><br>
 
                     <label for="street_nb">Street_number<?php $i ?> : </label>
-                    <input type="text" id="street_nb" name="street_nb<?php echo $i ?>"><br>
+                    <input type="number" id="street_nb" name="street_nb<?php echo $i ?>"><br>
 
                     <label for="type<?php echo $i ?>">Type<?php echo $i ?> : </label>
                     <select name="type<?php echo $i ?>" id="type<?php echo $i ?>">
@@ -50,7 +50,7 @@
                     </select><br>
 
                     <label for="zipcode">Zipcode<?php echo $i ?> : </label>
-                    <input type="text" id="zipcode" name="zipcode<?php echo $i ?>"><br>
+                    <input maxlength="6" type="text" id="zipcode" name="zipcode<?php echo $i ?>"><br>
             </fieldset>
 
         <?php
